@@ -116,6 +116,12 @@ label{font-weight:700;display:grid;gap:7px;font-size:15px}
 input,select,textarea{font:inherit;font-size:17px;padding:13px 14px;border-radius:10px;border:2px solid #444;background:#fff;color:#111;width:100%}
 input:focus,select:focus,textarea:focus{outline:3px solid var(--wa);border-color:var(--wa)}
 form .btn{justify-content:center;width:100%}
+.reviews{display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+.reviews::-webkit-scrollbar{display:none}
+.reviews .rv{flex:0 0 min(85%,340px);scroll-snap-align:start;margin:0}
+.rvbtn{margin-top:22px;text-align:center}.rvbtn .btn{border:2px solid #111}
+.credit{text-align:center;font-size:13px;opacity:.75;margin:28px 0 0;padding:0 16px}
+.credit a{text-decoration:underline}
 /* footer */
 footer{background:#0A0A0A;color:#fff;padding:46px 0 110px}
 footer .fg{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
@@ -238,7 +244,7 @@ footer p{color:#fff}
   <figure class="reveal"><img src="img/clark-480.webp" alt="Pala cargadora Clark en el patio" loading="lazy" width="480" height="640"><figcaption>Pala cargadora Clark</figcaption></figure>
   <figure class="reveal"><img src="img/scanner2-480.webp" alt="Escáner Jaltest junto a un tractor New Holland" loading="lazy" width="480" height="640"><figcaption>Escáner en el campo</figcaption></figure>
   <figure class="reveal"><img src="img/excavadora-480.webp" alt="Excavadora trabajando bajo cielo azul" loading="lazy" width="480" height="640"><figcaption>Excavadora en obra</figcaption></figure>
-  <figure class="reveal"><img src="img/atardecer-480.webp" alt="Tractores en el patio del taller al atardecer" loading="lazy" width="480" height="640"><figcaption>El patio al atardecer</figcaption></figure>
+  <figure class="reveal"><img src="img/jcb-480.webp" alt="Excavadora JCB trabajando en el campo" loading="lazy" width="480" height="640"><figcaption>Excavadora JCB en el campo</figcaption></figure>
   <figure class="reveal"><img src="img/scanner3-480.webp" alt="Diagnóstico con notebook en una Caterpillar 120H" loading="lazy" width="480" height="640"><figcaption>Scanner en Caterpillar 120H</figcaption></figure>
   <figure class="reveal"><img src="img/jaltest-480.webp" alt="Valija del escáner Jaltest" loading="lazy" width="480" height="853"><figcaption>Equipo de diagnóstico Jaltest</figcaption></figure>
   <figure class="reveal"><img src="img/nh-480.webp" alt="Tractor New Holland en revisión" loading="lazy" width="480" height="640"><figcaption>Revisión de New Holland</figcaption></figure>
@@ -286,7 +292,9 @@ footer p{color:#fff}
   <blockquote class="rv reveal"><div class="stars">★★★★★</div>“Impecable atención al cliente”<small>Opinión en Google</small></blockquote>
   <blockquote class="rv reveal"><div class="stars">★★★★★</div>“Muy buen servicio y muy macanuda la gente de allí”<small>Opinión en Google</small></blockquote>
   <blockquote class="rv reveal"><div class="stars">★★★★☆</div>“Trabajos de mecánica en maquinaria agrícola. Muy buen servicio”<small>Opinión en Google</small></blockquote>
+  <blockquote class="rv reveal"><div class="stars">★★★★★</div>“Buena atención”<small>Opinión en Google</small></blockquote>
  </div>
+ <p class="rvbtn"><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Taller+Alderamin+MR2R%2B2X7+Melo+Cerro+Largo" target="_blank" rel="noopener">★ Ver todas las reseñas en Google</a></p>
 </div></section>
 
 <section class="loc" id="ubicacion"><div class="wrap">
@@ -330,7 +338,9 @@ footer p{color:#fff}
 <footer><div class="wrap fg">
  <div class="fl"><img src="logo.svg" alt="Alderamín Mecánica Agrícola" width="300" height="64"></div>
  <div><p><strong>Alderamín</strong> · Mecánica Agrícola · Mecánica de Camiones · 4x4 · Melo, Cerro Largo</p><p>WhatsApp <a href="tel:+59898779575">098 779 575</a> <br><a href="https://www.instagram.com/alderamin.m.a/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/alderamin.mecanica.agricola" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.youtube.com/@alderaminoffroad" target="_blank" rel="noopener">YouTube offroad</a> · <a href="https://www.youtube.com/@alderaminfaunayflora" target="_blank" rel="noopener">YouTube fauna y flora</a></p></div>
-</div></footer>
+</div>
+<p class="credit">Web creada por <a href="https://hanseldisenoweb.uy" target="_blank" rel="noopener">Hansel Diseño Web</a></p>
+</footer>
 
 <a class="fab wa" href="#" data-msg="Hola Alderamín, quiero hacer una consulta." aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg><span>¿Consultas? Escribinos</span></a>
 
@@ -346,4 +356,5 @@ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es
 document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
 document.querySelectorAll('.yt').forEach(function(b){b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title=b.getAttribute('aria-label');b.appendChild(f)},{once:true})});
 </script>
+<script>(function(){var r=document.querySelector('.reviews');if(!r||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var h=0;r.addEventListener('pointerenter',function(){h=1});r.addEventListener('pointerleave',function(){h=0});r.addEventListener('touchstart',function(){h=1},{passive:true});setInterval(function(){if(h||r.scrollWidth<=r.clientWidth+4)return;var c=r.querySelector('.rv'),w=c.offsetWidth+16;r.scrollTo({left:(r.scrollLeft+w>=r.scrollWidth-r.clientWidth+4)?0:r.scrollLeft+w,behavior:'smooth'})},4000)})();</script>
 </body></html>
